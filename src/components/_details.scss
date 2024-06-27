@@ -53,15 +53,15 @@ foreignObject[mask="url(#svg-mask-status-offline)"] > div,
 foreignObject[mask="url(#svg-mask-status-offline)"] > rect,
 div[class^="dotOffline"],
 i[class^="statusOffline"] {
-  fill: $subtext0 !important;
-  background-color: $subtext0 !important;
+  fill: $surface2 !important;
+  background-color: $surface2 !important;
 }
 
 svg[fill="#82858f"],
 svg[fill="#80848e"],
 rect[fill="rgba(130, 133, 143, 1)"],
 rect[fill="rgba(128, 132, 142, 1)"] {
-  fill: $subtext0 !important;
+  fill: $surface2 !important;
 }
 
 // streaming
