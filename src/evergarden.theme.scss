@@ -1,0 +1,17 @@
+/**
+ * @name evergarden
+ * @author winston#0001 comfysage
+ * @version 0.1.0
+ * @description cozy theme for Discord
+ * @website https://github.com/comfysage/evergarden/tree/mega/extras/discord
+**/
+
+@use "sass:math";
+@use "@catppuccin/palette/scss/evergarden" as *;
+
+$brand: $blue;
+
+@import "theme";
+.theme-dark {
+  @import "@catppuccin/highlightjs/sass/catppuccin-mocha";
+}
