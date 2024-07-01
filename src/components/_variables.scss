@@ -251,8 +251,8 @@ html {
   --background-message-highlight: #{adjust-color($brand, $alpha: -0.9)};
   --background-message-highlight-hover: #{adjust-color($brand, $alpha: -0.92)};
 
-  --channels-default: #{darken($subtext0, 5%)};
-  --channel-icon: #{darken($subtext0, 5%)};
+  --channels-default: #{$subtext0};
+  --channel-icon: #{$subtext0};
   --channel-text-area-placeholder: #{adjust-color($text, $alpha: -0.5)};
   --channeltextarea-background: #{$mantle};
 
