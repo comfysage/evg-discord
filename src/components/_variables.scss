@@ -124,8 +124,8 @@ html {
   --chat-border: #{$crust};
   --chat-input-container-background: #{$base};
 
-  --background-modifier-hover: #{adjust-color($text, $alpha: -0.85)};
-  --background-modifier-selected: #{adjust-color($text, $alpha: -0.8)};
+  --background-modifier-hover: #{$surface0};
+  --background-modifier-selected: #{$surface1};
   --background-modifier-accent: #{adjust-color($text, $alpha: -0.74)};
   --background-modifier-active: #{adjust-color($text, $alpha: -0.83)};
 
