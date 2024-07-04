@@ -1,12 +1,7 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-const sourceFiles = [
-  "src/catppuccin-frappe.theme.scss",
-  "src/catppuccin-latte.theme.scss",
-  "src/catppuccin-macchiato.theme.scss",
-  "src/catppuccin-mocha.theme.scss",
-];
+const sourceFiles = ["src/evergarden.theme.scss"];
 
 const accents = [
   "rosewater",
@@ -27,7 +22,7 @@ const accents = [
 
 (async () => {
   await Promise.all(sourceFiles.map(generateAccents));
-  console.log("Generated all accents for all flavours");
+  console.log("Generated all accents for theme");
 })();
 
 // read sourceFile and generate all accents for it
