@@ -168,10 +168,10 @@ html {
   --button-positive-background-active: #{darken($green, math.div(15%, 2))};
   --button-positive-background-disabled: #{$green};
 
-  --button-secondary-background: #{$surface1};
-  --button-secondary-background-hover: #{darken($surface1, math.div(10%, 2))};
-  --button-secondary-background-active: #{darken($surface1, math.div(10%, 2))};
-  --button-secondary-background-disabled: #{$surface1};
+  --button-secondary-background: #{$sky};
+  --button-secondary-background-hover: #{darken($sky, math.div(10%, 2))};
+  --button-secondary-background-active: #{darken($sky, math.div(10%, 2))};
+  --button-secondary-background-disabled: #{$surface0};
 
   --button-outline-danger-text: #{$text};
   --button-outline-danger-border: #{$red};
