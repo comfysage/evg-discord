@@ -126,8 +126,8 @@ html {
 
   --background-modifier-hover: #{$surface0};
   --background-modifier-selected: #{$surface1};
-  --background-modifier-accent: #{adjust-color($text, $alpha: -0.74)};
-  --background-modifier-active: #{adjust-color($text, $alpha: -0.83)};
+  --background-modifier-accent: #{$surface1};
+  --background-modifier-active: #{$surface0};
 
   --info-positive-background: #{adjust-color($green, $alpha: -0.85)};
   --info-positive-foreground: #{$green};
