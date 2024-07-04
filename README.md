@@ -21,13 +21,13 @@
 1. Simply add your theme into your discord clients CustomCSS file/editor.
 
 ```css
-@import url("https://github.com/comfysage/evg-discord/raw/main/themes/evergarden.theme.css");
+@import url("https://raw.githubusercontent.com/comfysage/evg-discord/main/themes/evergarden.theme.css");
 
 /* You can also append color names to customize the accent, e.g. */
 /* green accent */
-@import url("https://github.com/comfysage/evg-discord/raw/main/themes/evergarden-green.theme.css");
+@import url("https://raw.githubusercontent.com/comfysage/evg-discord/main/themes/evergarden-green.theme.css");
 /* pink accent*/
-@import url("https://github.com/comfysage/evg-discord/raw/main/themes/evergarden-pink.theme.css");
+@import url("https://raw.githubusercontent.com/comfysage/evg-discord/main/themes/evergarden-pink.theme.css");
 ```
 
 ### [Stylus](https://github.com/openstyles/stylus)
