@@ -1,5 +1,34 @@
-// filled buttons and badges should have crust text
+@mixin stylebutton($bg: $sky, $fg: $crust, $hover_bg: false, $hover_fg: false) {
+  &[class*="lookFilled_"] {
+    color: $fg;
+    background-color: $bg;
+    &:hover {
+      @if $hover_bg {
+        background-color: $hover_bg;
+      } @else {
+        background-color: darken($bg, 5%);
+      }
+    }
+  }
+  &[class*="lookOutlined_"] {
+    color: $bg;
+    border-color: $bg;
+    &:hover {
+      color: $fg;
+      background-color: $bg;
+      border-color: $bg;
+    }
+  }
+  &[class*="lookLink_"] {
+    color: $bg;
+    &:hover [class*="contents_"] {
+      --button--underline-color: currentColor;
+    }
+  }
+}
+
 [class*="lookFilled_"] {
+  &[class*="colorPrimary_"],
   &[class*="colorBrand_"],
   &[class*="colorBrandNew_"],
   &[class*="colorBrandInverted_"],
@@ -7,8 +36,6 @@
   &[class*="colorYellow_"],
   &[class*="colorRed_"],
   &[class*="colorGreen_"] {
-    color: $crust;
-
     // darken the nitro button too
     svg[class^="premiumIcon"] {
       color: darken($pink, 20%) !important;
@@ -23,11 +50,6 @@
       color: $crust;
     }
   }
-
-  // ...unless it's primary
-  &[class*="colorPrimary_"] {
-    color: $text;
-  }
 }
 
 // For some reason, red buttons on click turn blue. Sure.
@@ -35,21 +57,12 @@ button[class*="lookFilled_"][class*="colorRed_"]:active {
   background-color: $red;
 }
 
-[class*="lookOutlined_"][class*="colorPrimary_"] {
-  border-color: $surface1;
-
-  &:hover {
-    background-color: $surface0;
-    color: $text;
-    border-color: $surface1;
-  }
-}
-
 // buttons in sidebar when in calls
 div[class^="actionButtons"] {
   [class^="button"][class*="buttonColor_"],
   [class^="button"] [class*="buttonColor_"] {
     background-color: $surface1;
+    color: $crust;
 
     &[class*="buttonActive_"] {
       background-color: $green;
@@ -79,12 +92,26 @@ div[class^="actionButtons"] {
 // lookLink + colorPrimary should be themed
 .theme-dark,
 .theme-light {
-  [class*="lookLink_"][class*="colorPrimary_"] {
-    color: $text;
+  [class*="colorBrand_"] {
+    @include stylebutton(var(--brand-500), $crust, var(--brand-experiment-600));
   }
-  [class*="lookFilled_"][class*="colorTransparent_"] {
-    color: $text;
-    background-color: $surface0;
+  [class*="colorLink_"] {
+    @include stylebutton($pink);
+  }
+  [class*="colorRed_"] {
+    @include stylebutton($red);
+  }
+  [class*="colorGreen_"] {
+    @include stylebutton($green);
+  }
+  [class*="colorWhite_"] {
+    @include stylebutton($text);
+  }
+  [class*="colorPrimary_"] {
+    @include stylebutton($sky);
+  }
+  [class*="colorTransparent_"] {
+    @include stylebutton($surface0, $text);
   }
 }
 
@@ -156,4 +183,42 @@ div[class^="layerContainer"] button[class^="backButton"][class*="lookBlank"] {
 // Make stream settings selected buttons text legible
 .vcd-screen-picker-radio[data-checked=true] > [class^="defaultColor_"] {
   color: $crust;
+}
+
+// inverted brand color
+[class*="colorBrandInverted_"] {
+  color: var(--brand-500);
+  background-color: $crust;
+  &[class*="lookFilled_"] {
+    color: var(--brand-500);
+    background-color: $crust;
+    &:hover {
+      background-color: $mantle;
+    }
+  }
+  &[class*="lookOutlined_"] {
+    &:hover {
+      background-color: $mantle;
+      color: var(--brand-500);
+    }
+  }
+}
+
+// darken close button and matching 'esc' text
+[class^="closeButton"],
+[class^="closeButton"]:hover {
+  color: $overlay0;
+  & + [class^="keybind"] {
+    color: $overlay0;
+  }
+}
+
+// on/off switch -- needs important because styles are written on element with js
+[class*="container_"][style="background-color: var(--primary-400); opacity: 1;"]:has(
+    svg[class*="slider_"]
+  ) {
+  background-color: $surface0 !important;
+}
+[class*="container_"] > svg[class*="slider_"] > svg > path {
+  fill: $surface0;
 }
