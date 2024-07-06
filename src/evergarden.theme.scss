@@ -10,6 +10,7 @@
 @use "@catppuccin/palette/scss/evergarden" as *;
 
 $brand: $blue;
+$dcommit: "dev";
 
 @import "theme";
 .theme-dark {
