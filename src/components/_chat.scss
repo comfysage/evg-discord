@@ -705,3 +705,16 @@ div[class^="message"][class*="isSystemMessage"] div[class^="icon"] {
     @include recolor($red);
   }
 }
+
+// adjust reply colors
+[class^="repliedMessage_"],
+[class^="executedCommand_"],
+[class^="threadMessageAccessory_"] {
+  [class^="username_"],
+  [class^="clanTagChiplet_"],
+  [class^="roleDot_"],
+  [class^="applicationName_"],
+  [class^="commandName_"] {
+    opacity: 1;
+  }
+}
