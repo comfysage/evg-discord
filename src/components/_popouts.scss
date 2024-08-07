@@ -11,7 +11,7 @@ div[class^="layerContainer"] [role="menu"] {
     &[class*="focused"] {
       &:not([class*="colorDanger"]),
       [class*="checkbox_"] {
-        color: var(--interactive-normal);
+        color: $crust;
       }
     }
 
