@@ -13,7 +13,39 @@ div[class^="layerContainer"] [role="menu"] {
       color: var(--interactive-normal);
     }
 
-    [class*="checkbox_"] {
+    &[class*="focused"] {
+      &:not([class*="colorDanger"]),
+      [class*="checkbox_"] {
+        color: $crust;
+      }
+    }
+
+    &[role="menuitem"]:not(
+        [class*="colorDanger"],
+        [id*="user-context-user-volume"]
+      ):hover {
+      &:not([class*="colorPremiumGradient"]) {
+        background: var(--background-accent);
+      }
+
+      color: $crust;
+
+      [class*="subtext"],
+      [class*="caret_"] {
+        color: $crust;
+      }
+    }
+
+    [class*="caret"] {
+      color: $text;
+    }
+
+    &:hover [class*="caret"] {
+      color: $crust;
+    }
+
+    // make active items have dark text
+    &:active:not([class*="hideInteraction_"]) {
       color: var(--background-floating);
     }
 
