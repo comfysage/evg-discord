@@ -1,29 +1,22 @@
 [class^="chatContent"] {
-  div[class*="wrapperAudio_"],
-  div[class*="imageWrapper_"] {
-    div[class*="audioControls"],
-    div[class*="videoControls_"] {
-      background-color: #{adjust-color($mantle, $alpha: -0.2)};
-
-      svg[class*="controlIcon_"] {
-        opacity: 1;
-        color: $subtext1;
-      }
-    }
-  }
-
   // new message ruler
   #---new-messages-bar {
     span[class^="unreadPill"] {
-      color: $crust;
+      color: #{$crust};
     }
   }
 
   // new message bar
   div[class^="newMessagesBar"] {
     button {
-      color: $crust;
+      color: #{$crust};
     }
+  }
+
+  // reply bar
+  [class^="attachedBars_"],
+  [class^="stackedBars_"] {
+    --background-secondary: #{$crust};
   }
 
   // text input area
@@ -48,7 +41,9 @@
   }
   // Super reactions and beta badge
   div[class*="isBurstReactionPicker_"] {
-    box-shadow: 0 0 0 2px $mauve, 0 0 16px $lavender;
+    box-shadow:
+      0 0 0 2px $mauve,
+      0 0 16px $lavender;
   }
   div[class^="navButtonSuperReactActive"],
   div[class^="navButtonSuperReactActive"]:hover {
@@ -69,7 +64,9 @@
   }
   div[class*="isBurstReactionPicker"] {
     border: none;
-    box-shadow: 0 0 0 2px $mauve, 0 0 16px $lavender;
+    box-shadow:
+      0 0 0 2px $mauve,
+      0 0 16px $lavender;
   }
   // Voice messages play button
   div[class*="playButtonContainer_"] {
@@ -118,6 +115,23 @@
         background-color: $green;
         color: $crust;
       }
+    }
+  }
+}
+
+div[class*="wrapperAudio_"],
+div[class*="imageWrapper_"] {
+  div[class*="audioControls"],
+  div[class*="videoControls_"] {
+    background-color: #{adjust-color($crust, $alpha: -0.2)};
+
+    svg[class*="controlIcon_"] {
+      opacity: 1;
+      color: $subtext1;
+    }
+
+    div[class*="mediaBarInteractionVolume"] {
+      background-color: #{adjust-color($crust, $alpha: -0.2)};
     }
   }
 }
@@ -263,11 +277,6 @@ div[class^="chat"] > div[class^="content"] > div[class^="container"] {
     background-color: $base;
   }
 
-  // Help keys
-  div[class^="matchingPostsRow"] span[class^="key"] {
-    color: $crust !important;
-  }
-
   // forum icons
   div[class^="pinIcon"],
   div[class^="stepStatus"] {
@@ -390,11 +399,6 @@ div[class^="callContainer"] {
     &:hover {
       color: $text;
     }
-  }
-
-  div[class*="tile_"],
-  div[class*="background_"] {
-    background-color: $base !important;
   }
 
   div[class*="overlayTitle"],
@@ -550,43 +554,29 @@ div[class*="giftCodeContainer"] [class*="tile"] {
 
 // channels & roles
 div[class*="chat_"] {
-  // header
-  section[class*="header_"] {
-    background-color: $mantle;
-  }
-
   div[class*="content_"][class*="container_"] {
-    background-color: $mantle;
+    // customise
+    --background-primary: #{$surface0};
+    --background-secondary: #{$base}; // dropdown menu
+    --background-secondary-alt: #{$mantle}; // roles
+    --background-tertiary: #{$mantle};
+    --input-background: #{$mantle};
+    --white-500: #{$crust}; // check icon
 
-    div[class*="container"] {
-      background-color: $mantle;
+    // channels
+    div[class*="search_"] input::placeholder {
+      color: $overlay1;
     }
-
-    div[class*="search_"] {
-      background-color: $base !important;
-
-      input::placeholder {
-        color: $overlay0;
+    div[class^="channelRow_"] {
+      &:hover:not([class*="disabled_"]) {
+        background-color: $surface1;
       }
-    }
-
-    div[class*="browser"] {
-      div[class*="content"] div[class^="container"] {
-        background-color: $base;
+      button {
+        border-color: $overlay0;
+        &:hover {
+          background-color: $overlay0;
+        }
       }
-    }
-
-    div[class*="scrollerContainer_"] {
-      background-color: $mantle;
-
-      div[class*="checkIcon_"][style*="opacity: 1;"] > svg > path {
-        fill: $crust;
-      }
-    }
-
-    div[role="tablist"] {
-      background-color: $mantle;
-      border-bottom: 2px solid $surface0;
     }
   }
 }
